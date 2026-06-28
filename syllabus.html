@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KSKVKU BA Sem 6 English Syllabus (2016)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+
+        .accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+
+        .accordion-content.open {
+            grid-template-rows: 1fr;
+            opacity: 1;
+        }
+
+        .accordion-inner {
+            overflow: hidden;
+        }
+        
+        .rotate-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="text-gray-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-indigo-900 text-white py-8 shadow-lg border-b-4 border-yellow-500">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between">
+            <div>
+                <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">Krantiguru Shyamji Krishna Verma</h1>
+                <h2 class="text-xl sm:text-2xl font-medium text-indigo-200 mt-1">Kachchh University (KSKVKU)</h2>
+                <p class="mt-2 text-sm text-yellow-400 font-semibold tracking-wide uppercase">B.A. Semester 6 | English Syllabus (CBCS 2016)</p>
+            </div>
+            <div class="mt-6 sm:mt-0 bg-white p-3 rounded-full shadow-md">
+                <i class="fas fa-university text-4xl text-indigo-900"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+
+        <!-- Global Paper Style Banner -->
+        <div class="bg-white rounded-xl shadow-md p-6 mb-8 border-l-4 border-indigo-600">
+            <div class="flex justify-between items-center cursor-pointer" onclick="togglePaperStyle()" id="paperStyleHeader">
+                <h3 class="text-lg font-bold text-gray-900 flex items-center">
+                    <i class="fas fa-file-alt text-indigo-600 mr-3"></i> General Paper Style (2016 Pattern)
+                </h3>
+                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300" id="paperStyleIcon"></i>
+            </div>
+            <div class="accordion-content mt-4" id="paperStyleContent">
+                <div class="accordion-inner text-sm text-gray-600">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-indigo-900 mb-2 border-b border-indigo-200 pb-2">Regular Students (70 Marks)</h4>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Time: 2 Hours 15 Minutes</li>
+                                <li>Attempt only <strong>Section A</strong></li>
+                                <li>Typically involves short notes, objective questions, and grammar/comprehension.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-yellow-900 mb-2 border-b border-yellow-200 pb-2">External Students (100 Marks)</h4>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Time: 3 Hours</li>
+                                <li>Attempt <strong>Section A</strong> (70 Marks) + <strong>Section B</strong> (30 Marks)</li>
+                                <li>Section B contains two long essay-type questions (15 marks each).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+            <h2 class="text-2xl font-bold text-gray-800">Subject Details</h2>
+            <div class="flex gap-3">
+                <button onclick="toggleAll(true)" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg shadow transition-colors flex items-center">
+                    <i class="fas fa-expand-alt mr-2"></i> Open All
+                </button>
+                <button onclick="toggleAll(false)" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm font-semibold rounded-lg shadow transition-colors flex items-center">
+                    <i class="fas fa-compress-alt mr-2"></i> Close All
+                </button>
+            </div>
+        </div>
+
+        <!-- Subjects Container -->
+        <div id="subjects-container" class="space-y-4">
+            <!-- Rendered via JS -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-6 text-center text-sm">
+        <p>&copy; Synthesized KSKVKU 2016 Syllabus Web App. For educational reference.</p>
+    </footer>
+
+    <script>
+        // Paper Style Toggle
+        let isPaperStyleOpen = false;
+        function togglePaperStyle() {
+            const content = document.getElementById('paperStyleContent');
+            const icon = document.getElementById('paperStyleIcon');
+            isPaperStyleOpen = !isPaperStyleOpen;
+            
+            if(isPaperStyleOpen) {
+                content.classList.add('open');
+                icon.classList.add('rotate-icon');
+            } else {
+                content.classList.remove('open');
+                icon.classList.remove('rotate-icon');
+            }
+        }
+
+        // Subject Data Array
+        const subjects = [
+            {
+                code: "CCEN606",
+                name: "GENERAL ENGLISH-[TH-UA]",
+                type: "Core Compulsory",
+                syllabus: `
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: Prose / Short Stories</h4>
+                            <p class="mb-2">Study of selected classic short stories to build comprehension and vocabulary.</p>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li><em>The Gift of the Magi</em> by O. Henry</li>
+                                <li><em>The Shroud (Kafan)</em> by Premchand</li>
+                                <li><em>The Fly</em> by Katherine Mansfield</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: Poetry</h4>
+                            <p class="mb-2">Prescribed Anthology: <em>Poetry Down the Ages</em>.</p>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li><em>Sonnet 116</em> by William Shakespeare</li>
+                                <li><em>The World Is Too Much With Us</em> by William Wordsworth</li>
+                                <li><em>O Captain! My Captain!</em> by Walt Whitman</li>
+                                <li><em>Goodbye Party for Miss Pushpa T.S.</em> by Nissim Ezekiel</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: Grammar and Communication Skills</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li><strong>Remedial Grammar:</strong> Modal auxiliary verbs, Tenses, and Determiners.</li>
+                                <li><strong>Speaking Skills:</strong> Dialogue writing (greetings, introductions, making requests).</li>
+                                <li><strong>Writing Skills:</strong> Prose comprehension and Paragraph writing.</li>
+                            </ul>
+                        </div>
+                    </div>`
+            },
+            {
+                code: "CEEN617",
+                name: "HISTORY OF ENGLISH LITERATURE (1890 - 1960)-[TH- UA]",
+                type: "Core Elective",
+                syllabus: `
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: Contexts and Characteristics</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Characteristics of the Modern Age.</li>
+                                <li>Impact of World War I and II on Literature.</li>
+                                <li>Movements: Imagism, Symbolism, and Surrealism.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: Modern Poetry</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>T.S. Eliot (The Waste Land context)</li>
+                                <li>W.B. Yeats</li>
+                                <li>War Poets (Siegfried Sassoon, Wilfred Owen)</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: Modern Fiction and Drama</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Stream of Consciousness novel (Virginia Woolf, James Joyce).</li>
+                                <li>Problem Plays (George Bernard Shaw, John Galsworthy).</li>
+                                <li>Absurd Drama (Samuel Beckett).</li>
+                            </ul>
+                        </div>
+                    </div>`
+            },
+            {
+                code: "CEEN618",
+                name: "INDIAN WRITING IN ENGLISH (POST-INDEPENDENCE PERIOD)-[TH- UA]",
+                type: "Core Elective",
+                syllabus: `
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: Socio-Cultural Background</h4>
+                            <p class="text-gray-600">Post-Independence Indian ethos, identity crisis, diaspora, and the evolution of Indian English.</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: Post-Independence Indian English Poetry</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Nissim Ezekiel</li>
+                                <li>Kamala Das</li>
+                                <li>A.K. Ramanujan</li>
+                                <li>Jayanta Mahapatra</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: Indian English Fiction and Drama</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Study of major novelists: Salman Rushdie, Amitav Ghosh, Arundhati Roy.</li>
+                                <li>Study of major dramatists: Girish Karnad, Mahesh Dattani, Vijay Tendulkar (Translations).</li>
+                            </ul>
+                        </div>
+                    </div>`
+            },
+            {
+                code: "CEEN619",
+                name: "READING NON-FICTIONAL PROSE-[TH - UA]",
+                type: "Core Elective",
+                syllabus: `
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: Forms of Non-Fictional Prose</h4>
+                            <p class="text-gray-600">Understanding Autobiography, Biography, Memoir, Travelogue, and Essay.</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: Selected Autobiographies/Biographies</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Extracts from <em>The Story of My Experiments with Truth</em> by M.K. Gandhi.</li>
+                                <li>Extracts from <em>Wings of Fire</em> by A.P.J. Abdul Kalam.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: Selected Essays</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Selected modern and classical essays focusing on socio-political issues, philosophy, and literature.</li>
+                                <li>Francis Bacon, Charles Lamb, or George Orwell (Representative works).</li>
+                            </ul>
+                        </div>
+                    </div>`
+            },
+            {
+                code: "CEEN620",
+                name: "INDIAN LITERARY THEORIES-I [TH - UA]",
+                type: "Core Elective",
+                syllabus: `
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: Introduction to Indian Poetics</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Overview of Sanskrit Poetics.</li>
+                                <li>Bharata Muni's <em>Natyashastra</em> (Basic concepts).</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: Rasa Theory</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Concept of Rasa.</li>
+                                <li>Bhavas: Sthayibhava, Vyabhicharibhava, Sattvikabhava.</li>
+                                <li>Vibhava and Anubhava.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: Other Major Theories</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Dhvani Theory (Anandavardhana).</li>
+                                <li>Vakrokti (Kuntaka) & Alamkara (Bhamaha/Dandin) overview.</li>
+                            </ul>
+                        </div>
+                    </div>`
+            },
+            {
+                code: "CEEN621A",
+                name: "HISTORY OF ENGLISH LANGUAGE- [TH - UA]",
+                type: "Core Elective",
+                syllabus: `
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: The Origins</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>The Indo-European Family of Languages.</li>
+                                <li>Grimm's Law and Verner's Law.</li>
+                                <li>The descent of the English Language.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: Historical Development</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>General characteristics of Old English (OE).</li>
+                                <li>General characteristics of Middle English (ME).</li>
+                                <li>The Great Vowel Shift and the making of Modern English.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: Vocabulary and Influences</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Word formation processes (Affixation, Compounding, etc.).</li>
+                                <li>Foreign Influences on English: Latin, Greek, French, and Scandinavian borrowings.</li>
+                            </ul>
+                        </div>
+                    </div>`
+            },
+            {
+                code: "CEEN622A",
+                name: "AMERICAN LITERATURE- [TH - UA]",
+                type: "Core Elective",
+                syllabus: `
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: Historical Context</h4>
+                            <p class="text-gray-600">Transcendentalism, The Roaring Twenties, The Great Depression, and the evolution of the "American Dream".</p>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: American Poetry</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Walt Whitman (Selected poems from <em>Leaves of Grass</em>)</li>
+                                <li>Emily Dickinson</li>
+                                <li>Robert Frost (<em>The Road Not Taken, Stopping by Woods...</em>)</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
+                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: American Fiction & Drama</h4>
+                            <ul class="list-disc pl-6 text-gray-600">
+                                <li>Fiction: Ernest Hemingway (e.g., <em>The Old Man and the Sea</em>), Mark Twain, or F. Scott Fitzgerald.</li>
+                                <li>Drama: Arthur Miller (e.g., <em>Death of a Salesman</em>) or Tennessee Williams.</li>
+                            </ul>
+                        </div>
+                    </div>`
+            }
+        ];
+
+        const container = document.getElementById('subjects-container');
+        let openStates = {};
+
+        // Render Subjects
+        function renderSubjects() {
+            container.innerHTML = '';
+            subjects.forEach((subject, index) => {
+                openStates[index] = false;
+                
+                const subjectEl = document.createElement('div');
+                subjectEl.className = 'bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-shadow hover:shadow-md';
+                
+                subjectEl.innerHTML = `
+                    <div class="px-6 py-5 flex items-center justify-between cursor-pointer select-none bg-white hover:bg-gray-50 transition-colors" onclick="toggleSubject(${index})">
+                        <div class="flex-grow pr-4">
+                            <div class="flex flex-wrap items-center gap-2 mb-1">
+                                <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-0.5 rounded">${subject.code}</span>
+                                <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-2.5 py-0.5 rounded">${subject.type}</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 leading-tight">${subject.name}</h3>
+                        </div>
+                        <div class="flex-shrink-0 bg-indigo-50 text-indigo-600 w-10 h-10 rounded-full flex items-center justify-center transition-transform duration-300 icon-container-${index}">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="accordion-content border-t border-gray-100 bg-gray-50" id="content-${index}">
+                        <div class="accordion-inner p-6 text-sm">
+                            ${subject.syllabus}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(subjectEl);
+            });
+        }
+
+        // Toggle Single Subject
+        function toggleSubject(index) {
+            const content = document.getElementById(`content-${index}`);
+            const iconContainer = document.querySelector(`.icon-container-${index}`);
+            
+            openStates[index] = !openStates[index];
+            
+            if (openStates[index]) {
+                content.classList.add('open');
+                iconContainer.classList.add('rotate-icon', 'bg-indigo-600', 'text-white');
+                iconContainer.classList.remove('bg-indigo-50', 'text-indigo-600');
+            } else {
+                content.classList.remove('open');
+                iconContainer.classList.remove('rotate-icon', 'bg-indigo-600', 'text-white');
+                iconContainer.classList.add('bg-indigo-50', 'text-indigo-600');
+            }
+        }
+
+        // Toggle All Subjects
+        function toggleAll(open) {
+            subjects.forEach((_, index) => {
+                const content = document.getElementById(`content-${index}`);
+                const iconContainer = document.querySelector(`.icon-container-${index}`);
+                
+                openStates[index] = open;
+                
+                if (open) {
+                    content.classList.add('open');
+                    iconContainer.classList.add('rotate-icon', 'bg-indigo-600', 'text-white');
+                    iconContainer.classList.remove('bg-indigo-50', 'text-indigo-600');
+                } else {
+                    content.classList.remove('open');
+                    iconContainer.classList.remove('rotate-icon', 'bg-indigo-600', 'text-white');
+                    iconContainer.classList.add('bg-indigo-50', 'text-indigo-600');
+                }
+            });
+        }
+
+        // Initial Render
+        window.onload = () => {
+            renderSubjects();
+            // Automatically open paper style
+            togglePaperStyle();
+        };
+
+    </script>
+</body>
+</html>
+
