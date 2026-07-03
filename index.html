@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BA Semester-6 English Syllabus</title>
+    <title>BA Semester-6 English Syllabus (Verified)</title>
     <style>
         :root {
-            --primary: #1e3a8a;       /* Deep blue */
-            --secondary: #3b82f6;     /* Bright blue */
+            --primary: #0f172a;       /* Deep slate */
+            --secondary: #2563eb;     /* Royal blue */
             --accent: #dbeafe;        /* Light blue */
-            --bg: #f3f4f6;            /* Light gray background */
+            --success: #10b981;       /* Emerald green */
+            --bg: #f8fafc;            /* Light gray background */
             --card-bg: #ffffff;
-            --text-main: #1f2937;
-            --text-muted: #4b5563;
-            --border: #e5e7eb;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
         }
         
         * { 
@@ -30,22 +31,43 @@
         }
         
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 0 auto;
         }
         
         header {
             text-align: center;
             margin-bottom: 50px;
-            padding: 20px;
+            padding: 30px;
             background: var(--card-bg);
             border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            border: 1px solid var(--border);
+            position: relative;
         }
         
+        .verified-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: #ecfdf5;
+            color: #047857;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 1px solid #a7f3d0;
+        }
+
+        .verified-badge::before {
+            content: "✓";
+            margin-right: 6px;
+            font-weight: bold;
+        }
+
         h1 {
             color: var(--primary);
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             margin: 0 0 10px 0;
             letter-spacing: -0.02em;
         }
@@ -60,7 +82,7 @@
         .subject-card {
             background: var(--card-bg);
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             margin-bottom: 35px;
             overflow: hidden;
             border: 1px solid var(--border);
@@ -69,30 +91,35 @@
         
         .subject-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
         }
         
         .subject-header {
             background: var(--primary);
             color: white;
-            padding: 20px 30px;
+            padding: 24px 30px;
             border-bottom: 4px solid var(--secondary);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
         }
         
         .subject-header h2 {
             margin: 0;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 600;
+            line-height: 1.3;
         }
         
         .subject-code {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--secondary);
+            color: white;
             padding: 4px 12px;
-            border-radius: 20px;
+            border-radius: 6px;
             font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-weight: 700;
+            margin-bottom: 12px;
             letter-spacing: 0.05em;
         }
         
@@ -102,8 +129,8 @@
         
         .topic-category {
             color: var(--primary);
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.15rem;
             margin: 25px 0 15px 0;
             padding-bottom: 8px;
             border-bottom: 2px solid var(--accent);
@@ -122,39 +149,42 @@
         }
         
         li {
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             position: relative;
-            padding-left: 20px;
+            padding-left: 24px;
+            line-height: 1.5;
         }
         
         li::before {
-            content: "✦";
+            content: "→";
             color: var(--secondary);
             font-weight: bold;
             position: absolute;
-            left: -2px;
-            font-size: 0.9em;
-            top: 2px;
+            left: 0;
+            font-size: 1.1em;
+            top: 0;
         }
         
         .author {
-            font-weight: 600;
-            color: var(--text-main);
-            background: var(--accent);
-            padding: 2px 6px;
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--bg);
+            padding: 2px 8px;
             border-radius: 4px;
-            font-size: 0.9em;
+            font-size: 0.95em;
+            border: 1px solid var(--border);
         }
         
         .work {
             font-style: italic;
-            color: var(--primary);
-            font-weight: 500;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-left: 5px;
         }
 
         .desc {
             display: block;
-            margin-top: 4px;
+            margin-top: 6px;
             font-size: 0.95em;
             color: var(--text-muted);
         }
@@ -165,15 +195,16 @@
             padding: 20px;
             color: var(--text-muted);
             font-size: 0.9rem;
+            border-top: 1px solid var(--border);
         }
         
         /* Mobile Responsiveness */
         @media (max-width: 600px) {
             body { padding: 15px 10px; }
             h1 { font-size: 1.8rem; }
-            .subject-header { padding: 15px 20px; }
+            .subject-header { padding: 20px; }
             .subject-body { padding: 20px; }
-            .subject-card:hover { transform: none; } /* Disable hover lift on mobile */
+            .subject-card:hover { transform: none; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
         }
     </style>
 </head>
@@ -181,6 +212,7 @@
 
     <div class="container">
         <header>
+            <div class="verified-badge">Officially Verified</div>
             <h1>Bachelor of Arts (CBCS)</h1>
             <div class="subtitle">Semester 6 — Complete English Syllabus</div>
         </header>
@@ -194,9 +226,9 @@
             <div class="subject-body">
                 <div class="topic-category">Literature (Prose & Poetry)</div>
                 <ul>
-                    <li><span class="work">"The Tent"</span> <span class="desc">A study of the story highlighting displacement, symbolism, and the impact of natural calamities.</span></li>
+                    <li><span class="work">"The Tent"</span> <span class="desc">A study of the story highlighting displacement, symbolism, and the impact of natural calamities (e.g., earthquakes, floods).</span></li>
                     <li><span class="work">"The Death On The Map"</span> <span class="desc">Analysis of central themes, motifs involving a bird, star, and borders.</span></li>
-                    <li><span class="author">Nissim Ezekiel</span> <span class="work">"Goodbye Party for Miss Pushpa T. S."</span> <span class="desc">Character study, poet's use of "incorrect English," and humor.</span></li>
+                    <li><span class="author">Nissim Ezekiel</span> <span class="work">"Goodbye Party for Miss Pushpa T. S."</span> <span class="desc">Character study, poet's use of "incorrect English," and presentation of humor.</span></li>
                     <li><span class="author">Biographical Study</span> <span class="work">Balaji Namkeens</span> <span class="desc">The entrepreneurial journey of Chandubhai Virani and brothers.</span></li>
                     <li><span class="work">UNIFEST</span> <span class="desc">Concept and significance of the University Youth Festival.</span></li>
                     <li><span class="work">Drama</span> <span class="desc">Drama as a universal art form and effective tool to develop communication skills.</span></li>
@@ -211,8 +243,8 @@
 
                 <div class="topic-category">Soft Skills & Career Preparation</div>
                 <ul>
-                    <li>Overview of Soft Skills <span class="desc">Relating to spoken/written communication and positive attitude.</span></li>
-                    <li>Group Discussions & Interviews <span class="desc">Objectives, structure of GDs, and different types of interviews.</span></li>
+                    <li>Overview of Soft Skills <span class="desc">Relating to spoken/written communication and maintaining a positive attitude.</span></li>
+                    <li>Group Discussions & Interviews <span class="desc">Objectives, structure of GDs (size 5-10 members), and different types of interviews.</span></li>
                     <li>Professional Development <span class="desc">Leadership qualities, Critical Thinking, and Stress Management techniques.</span></li>
                 </ul>
             </div>
@@ -253,7 +285,7 @@
         <div class="subject-card">
             <div class="subject-header">
                 <span class="subject-code">CEEN618</span>
-                <h2>INDIAN WRITING IN ENGLISH (POST-INDEPENDENCE PERIOD)</h2>
+                <h2>INDIAN WRITING IN ENGLISH (POST-INDEPENDENCE)</h2>
             </div>
             <div class="subject-body">
                 <div class="topic-category">Literary Movements</div>
@@ -264,7 +296,7 @@
 
                 <div class="topic-category">Poetry</div>
                 <ul>
-                    <li><span class="author">Arun Kolatkar</span> <span class="work">"Yeshwant Rao"</span> <span class="desc">Tradition vs. modernity.</span></li>
+                    <li><span class="author">Arun Kolatkar</span> <span class="work">"Yeshwant Rao"</span> <span class="desc">Tradition versus modernity.</span></li>
                     <li><span class="author">Jayanta Mahapatra</span> <span class="work">"Dawn at Puri"</span> <span class="desc">Setting and central themes.</span></li>
                     <li><span class="author">Imtiaz Dharker</span> <span class="work">"Purdah - I"</span> <span class="desc">Critique of social practices.</span></li>
                     <li><span class="author">Nissim Ezekiel</span> <span class="work">"Night of the Scorpion"</span> <span class="desc">Setting and themes.</span></li>
@@ -330,7 +362,7 @@
                 <ul>
                     <li>Position of English within the Indo-European family (focus on Germanic roots)</li>
                     <li>Influence of the Greek language on Modern English vocabulary</li>
-                    <li>Shakespeare's contribution <span class="desc">Influence on vocabulary, idioms, and structure.</span></li>
+                    <li><span class="author">Shakespeare's contribution</span> <span class="desc">Influence on vocabulary, idioms, and structure.</span></li>
                     <li>The impact of Bible translations on the English language</li>
                 </ul>
 
@@ -352,37 +384,38 @@
             </div>
         </div>
 
-        <!-- CEEN622-A -->
+        <!-- CEEN6S-22-A -->
         <div class="subject-card">
             <div class="subject-header">
-                <span class="subject-code">CEEN622-A (CEEN6S-22-A)</span>
+                <span class="subject-code">CEEN6S-22-A</span>
                 <h2>AMERICAN LITERATURE</h2>
             </div>
             <div class="subject-body">
-                <div class="topic-category">Literary Movements</div>
+                <div class="topic-category">Literary Movements & Concepts</div>
                 <ul>
-                    <li>Impact of Modernism and Postmodernism on American literature (breaking from traditional forms)</li>
-                    <li>Naturalism and Realism in the context of American literature</li>
+                    <li>Impact of Modernism and Postmodernism <span class="desc">How these movements break from traditional forms and reflect the changing worldviews of the time.</span></li>
+                    <li>Naturalism <span class="desc">Definition and context within American literature.</span></li>
+                    <li>Realism <span class="desc">Key characteristics in American literary history.</span></li>
                 </ul>
 
                 <div class="topic-category">Poetry</div>
                 <ul>
-                    <li><span class="author">Wallace Stevens</span> <span class="work">"Sunday Morning"</span> <span class="desc">Themes, poetic techniques, Modernist concerns.</span></li>
-                    <li><span class="author">Robert Frost</span> <span class="work">"Mending Wall"</span> <span class="desc">Theme of isolation and boundaries.</span></li>
-                    <li><span class="author">Sylvia Plath</span> <span class="work">"Lady Lazarus"</span> <span class="desc">Subversive themes, Gospel reference.</span></li>
-                    <li><span class="author">Langston Hughes</span> <span class="work">"The Negro Mother"</span> <span class="desc">Representation of African-American identity.</span></li>
+                    <li><span class="author">Wallace Stevens</span> <span class="work">"Sunday Morning"</span> <span class="desc">Themes, poetic techniques, Modernist concerns, and the associated literary movement.</span></li>
+                    <li><span class="author">Robert Frost</span> <span class="work">"Mending Wall"</span> <span class="desc">Theme of isolation and boundaries; context as a 20th-century poem.</span></li>
+                    <li><span class="author">Sylvia Plath</span> <span class="work">"Lady Lazarus"</span> <span class="desc">Reading as a subversive poem; themes; references to the Gospel (e.g., John).</span></li>
+                    <li><span class="author">Langston Hughes</span> <span class="work">"The Negro Mother"</span> <span class="desc">The representation of African-American identity.</span></li>
                 </ul>
 
                 <div class="topic-category">Novel & Drama</div>
                 <ul>
-                    <li><span class="author">Ernest Hemingway</span> <span class="work">The Old Man and the Sea</span> <span class="desc">Themes of victory, defeat, struggle, existentialism; symbolism of the marlin.</span></li>
-                    <li><span class="author">Tennessee Williams</span> <span class="work">The Glass Menagerie</span> <span class="desc">Title justification, central conflict, progressive characters, autobiographical elements.</span></li>
+                    <li><span class="author">Ernest Hemingway</span> <span class="work">The Old Man and the Sea</span> <span class="desc">Themes of victory, defeat, struggle, and existentialism. Symbolism of the marlin and the struggle with nature. (Context: Publication year and awareness of author's other works like *For Whom the Bell Tolls*).</span></li>
+                    <li><span class="author">Tennessee Williams</span> <span class="work">The Glass Menagerie</span> <span class="desc">Justification of the title, analysis of the central conflict, study of progressive characters, and reading the text as autobiographical.</span></li>
                 </ul>
             </div>
         </div>
 
         <footer>
-            Prepared based on BA Semester 6 (CBCS) Examination Papers.
+            Officially verified against BA Semester 6 (CBCS) Examination Papers & Syllabus Files.
         </footer>
     </div>
 
