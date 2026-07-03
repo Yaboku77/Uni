@@ -3,420 +3,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BA Semester-6 English Syllabus (Verified)</title>
+    <title>B.A. (CBCS) Semester VI Syllabus</title>
     <style>
-        :root {
-            --primary: #0f172a;       /* Deep slate */
-            --secondary: #2563eb;     /* Royal blue */
-            --accent: #dbeafe;        /* Light blue */
-            --success: #10b981;       /* Emerald green */
-            --bg: #f8fafc;            /* Light gray background */
-            --card-bg: #ffffff;
-            --text-main: #334155;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-        }
-        
-        * { 
-            box-sizing: border-box; 
-        }
-        
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
+            font-family: Arial, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 40px 20px;
-        }
-        
-        .container {
-            max-width: 950px;
             margin: 0 auto;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 30px;
-            background: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            border: 1px solid var(--border);
-            position: relative;
-        }
-        
-        .verified-badge {
-            display: inline-flex;
-            align-items: center;
-            background-color: #ecfdf5;
-            color: #047857;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            border: 1px solid #a7f3d0;
-        }
-
-        .verified-badge::before {
-            content: "✓";
-            margin-right: 6px;
-            font-weight: bold;
-        }
-
-        h1 {
-            color: var(--primary);
-            font-size: 2.4rem;
-            margin: 0 0 10px 0;
-            letter-spacing: -0.02em;
-        }
-        
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-
-        /* Subject Card Styling */
-        .subject-card {
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            margin-bottom: 35px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .subject-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08);
-        }
-        
-        .subject-header {
-            background: var(--primary);
-            color: white;
-            padding: 24px 30px;
-            border-bottom: 4px solid var(--secondary);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        
-        .subject-header h2 {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: 600;
-            line-height: 1.3;
-        }
-        
-        .subject-code {
-            display: inline-block;
-            background: var(--secondary);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: 0.05em;
-        }
-        
-        .subject-body {
-            padding: 30px;
-        }
-        
-        .topic-category {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1.15rem;
-            margin: 25px 0 15px 0;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--accent);
-            display: flex;
-            align-items: center;
-        }
-        
-        .topic-category:first-child {
-            margin-top: 0;
-        }
-        
-        ul {
-            margin: 0;
-            padding-left: 10px;
-            list-style-type: none;
-        }
-        
-        li {
-            margin-bottom: 14px;
-            position: relative;
-            padding-left: 24px;
-            line-height: 1.5;
-        }
-        
-        li::before {
-            content: "→";
-            color: var(--secondary);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            font-size: 1.1em;
-            top: 0;
-        }
-        
-        .author {
-            font-weight: 700;
-            color: var(--primary);
-            background: var(--bg);
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.95em;
-            border: 1px solid var(--border);
-        }
-        
-        .work {
-            font-style: italic;
-            color: var(--secondary);
-            font-weight: 600;
-            margin-left: 5px;
-        }
-
-        .desc {
-            display: block;
-            margin-top: 6px;
-            font-size: 0.95em;
-            color: var(--text-muted);
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 50px;
+            max-width: 900px;
             padding: 20px;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid var(--border);
+            color: #333;
         }
-        
-        /* Mobile Responsiveness */
-        @media (max-width: 600px) {
-            body { padding: 15px 10px; }
-            h1 { font-size: 1.8rem; }
-            .subject-header { padding: 20px; }
-            .subject-body { padding: 20px; }
-            .subject-card:hover { transform: none; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 40px;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #34495e;
+            margin-bottom: 5px;
+        }
+        .course-meta {
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        ul {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .exam-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            margin-top: 40px;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        th, td {
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #ecf0f1;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <div class="verified-badge">Officially Verified</div>
-            <h1>Bachelor of Arts (CBCS)</h1>
-            <div class="subtitle">Semester 6 — Complete English Syllabus</div>
-        </header>
+    <h1>B.A. (CBCS) Semester VI Syllabus</h1>
 
-        <!-- CCEN606 -->
-        <div class="subject-card">
-            <div class="subject-header">
-                <span class="subject-code">CCEN606</span>
-                <h2>GENERAL ENGLISH</h2>
-            </div>
-            <div class="subject-body">
-                <div class="topic-category">Literature (Prose & Poetry)</div>
-                <ul>
-                    <li><span class="work">"The Tent"</span> <span class="desc">A study of the story highlighting displacement, symbolism, and the impact of natural calamities (e.g., earthquakes, floods).</span></li>
-                    <li><span class="work">"The Death On The Map"</span> <span class="desc">Analysis of central themes, motifs involving a bird, star, and borders.</span></li>
-                    <li><span class="author">Nissim Ezekiel</span> <span class="work">"Goodbye Party for Miss Pushpa T. S."</span> <span class="desc">Character study, poet's use of "incorrect English," and presentation of humor.</span></li>
-                    <li><span class="author">Biographical Study</span> <span class="work">Balaji Namkeens</span> <span class="desc">The entrepreneurial journey of Chandubhai Virani and brothers.</span></li>
-                    <li><span class="work">UNIFEST</span> <span class="desc">Concept and significance of the University Youth Festival.</span></li>
-                    <li><span class="work">Drama</span> <span class="desc">Drama as a universal art form and effective tool to develop communication skills.</span></li>
-                </ul>
+    [span_0](start_span)<h2>Course Title: History of English Literature (1890-1960)[span_0](end_span)</h2>
+    [span_1](start_span)<div class="course-meta">Core Elective / Course Code: CEEN617[span_1](end_span)</div>
+    
+    [span_2](start_span)<h3>Unit I[span_2](end_span)</h3>
+    <ul>
+        [span_3](start_span)<li>General character of the twentieth century literature[span_3](end_span).</li>
+        [span_4](start_span)<li>Psychological Novel[span_4](end_span).</li>
+        [span_5](start_span)<li>Revival of poetic drama[span_5](end_span).</li>
+        [span_6](start_span)<li>The Movement Poetry[span_6](end_span).</li>
+    </ul>
 
-                <div class="topic-category">Fundamentals of Communication</div>
-                <ul>
-                    <li>Introduction to Communication <span class="desc">Defining communication, forms (oral, face-to-face, etc.), and qualities of a good communicator.</span></li>
-                    <li>The Communication Process <span class="desc">Step-by-step process and the vital role of feedback.</span></li>
-                    <li>Non-Verbal & Barriers <span class="desc">Body language (Kinesics) and identifying barriers to effective communication.</span></li>
-                </ul>
+    [span_7](start_span)<h3>Unit III: The following poems are prescribed[span_7](end_span)</h3>
+    <ul>
+        <li>T.S. [span_8](start_span)Eliot: To the Indians Who Died in Africa[span_8](end_span).</li>
+        <li>W. [span_9](start_span)B. Yeats: The Second Coming[span_9](end_span).</li>
+        <li>W.H. [span_10](start_span)Auden: The Unknown Citizen[span_10](end_span).</li>
+        [span_11](start_span)<li>Philip Larkin: Church Going[span_11](end_span).</li>
+    </ul>
 
-                <div class="topic-category">Soft Skills & Career Preparation</div>
-                <ul>
-                    <li>Overview of Soft Skills <span class="desc">Relating to spoken/written communication and maintaining a positive attitude.</span></li>
-                    <li>Group Discussions & Interviews <span class="desc">Objectives, structure of GDs (size 5-10 members), and different types of interviews.</span></li>
-                    <li>Professional Development <span class="desc">Leadership qualities, Critical Thinking, and Stress Management techniques.</span></li>
-                </ul>
-            </div>
-        </div>
+    [span_12](start_span)<h3>Unit III[span_12](end_span)</h3>
+    <ul>
+        [span_13](start_span)<li>John Osborne: Look Back in Anger[span_13](end_span).</li>
+    </ul>
 
-        <!-- CEEN617 -->
-        <div class="subject-card">
-            <div class="subject-header">
-                <span class="subject-code">CEEN617</span>
-                <h2>HISTORY OF ENGLISH LITERATURE (1890-1960)</h2>
-            </div>
-            <div class="subject-body">
-                <div class="topic-category">Literary Movements & Context</div>
-                <ul>
-                    <li>Impact of social, political, and economic changes on 20th-century English literature</li>
-                    <li>Characteristics of Movement Poetry</li>
-                    <li>Development of the Psychological Novel (and its narrative techniques)</li>
-                    <li>Revival of Poetic Drama in the 20th century</li>
-                    <li>The "Angry Young Man" movement</li>
-                </ul>
+    <h3>Recommended Reading</h3>
+    <ul>
+        <li>David Daiches: A Critical History of English Literature, Vol. [span_14](start_span)III, IV, Allied Publishers, New Delhi[span_14](end_span).</li>
+        [span_15](start_span)<li>William J. Long: History of English Literature[span_15](end_span).</li>
+        [span_16](start_span)<li>Andrew Sanders: The Short Oxford History of English Literature[span_16](end_span).</li>
+    </ul>
 
-                <div class="topic-category">Poetry</div>
-                <ul>
-                    <li><span class="author">T.S. Eliot</span> <span class="work">"To the Indian Who Died in Africa"</span> <span class="desc">Theme of exile and identity.</span></li>
-                    <li><span class="author">W.B. Yeats</span> <span class="work">"The Second Coming"</span> <span class="desc">Apocalyptic imagery, symbolism of the rough beast.</span></li>
-                    <li><span class="author">Philip Larkin</span> <span class="work">"Church Going"</span> <span class="desc">Significance of the church as a symbol.</span></li>
-                    <li><span class="author">W.H. Auden</span> <span class="work">"The Unknown Citizen"</span> <span class="desc">Critique of modern bureaucracy, central irony.</span></li>
-                </ul>
+    [span_17](start_span)<h2>Course Title: Indian Writing in English (Post-Independence Period)[span_17](end_span)</h2>
+    [span_18](start_span)<div class="course-meta">Core Elective Course / Course Code: CEEN618[span_18](end_span)</div>
 
-                <div class="topic-category">Drama</div>
-                <ul>
-                    <li><span class="author">John Osborne</span> <span class="work">Look Back in Anger</span> <span class="desc">Themes of anger/disillusionment, social issues, characters of Jimmy & Alison Porter, the "bear and squirrel game" symbolism.</span></li>
-                </ul>
-            </div>
-        </div>
+    [span_19](start_span)<h3>Unit I (A) Topics for background reading[span_19](end_span)</h3>
+    <ul>
+        [span_20](start_span)<li>Post-Independence Indian Poetry in English[span_20](end_span).</li>
+        [span_21](start_span)<li>Trends in Post-Independence Indian English drama[span_21](end_span).</li>
+        [span_22](start_span)<li>Post-Independence Indian English novel[span_22](end_span).</li>
+    </ul>
 
-        <!-- CEEN618 -->
-        <div class="subject-card">
-            <div class="subject-header">
-                <span class="subject-code">CEEN618</span>
-                <h2>INDIAN WRITING IN ENGLISH (POST-INDEPENDENCE)</h2>
-            </div>
-            <div class="subject-body">
-                <div class="topic-category">Literary Movements</div>
-                <ul>
-                    <li>Evolution, major trends, and significant figures of Post-Independence Indian Poetry in English</li>
-                    <li>Evolution, main trends, and important dramatists of Post-Independence Indian English Drama</li>
-                </ul>
+    [span_23](start_span)<h3>Unit I (B) The following poems are prescribed[span_23](end_span)</h3>
+    <ul>
+        [span_24](start_span)<li>Nissim Ezekiel: Night of the Scorpion[span_24](end_span).</li>
+        [span_25](start_span)<li>Arun Kolatkar: Yeshwant Rao[span_25](end_span).</li>
+        [span_26](start_span)<li>Jayant Mahapatra: Dawn at Puri[span_26](end_span).</li>
+        [span_27](start_span)<li>Imtiaz Dharker: Purdah - I[span_27](end_span).</li>
+    </ul>
 
-                <div class="topic-category">Poetry</div>
-                <ul>
-                    <li><span class="author">Arun Kolatkar</span> <span class="work">"Yeshwant Rao"</span> <span class="desc">Tradition versus modernity.</span></li>
-                    <li><span class="author">Jayanta Mahapatra</span> <span class="work">"Dawn at Puri"</span> <span class="desc">Setting and central themes.</span></li>
-                    <li><span class="author">Imtiaz Dharker</span> <span class="work">"Purdah - I"</span> <span class="desc">Critique of social practices.</span></li>
-                    <li><span class="author">Nissim Ezekiel</span> <span class="work">"Night of the Scorpion"</span> <span class="desc">Setting and themes.</span></li>
-                </ul>
+    [span_28](start_span)<h3>Unit II[span_28](end_span)</h3>
+    <ul>
+        [span_29](start_span)<li>Shashi Deshpande: That Long Silence[span_29](end_span).</li>
+    </ul>
 
-                <div class="topic-category">Novel & Drama</div>
-                <ul>
-                    <li><span class="author">Shashi Deshpande</span> <span class="work">That Long Silence</span> <span class="desc">Role of women, theme of silence and its consequences.</span></li>
-                    <li><span class="author">Mahesh Dattani</span> <span class="work">Final Solutions</span> <span class="desc">Communal conflict and its resolution.</span></li>
-                </ul>
-            </div>
-        </div>
+    [span_30](start_span)<h3>Unit III[span_30](end_span)</h3>
+    <ul>
+        [span_31](start_span)<li>Mahesh Dattani: Final Solutions[span_31](end_span).</li>
+    </ul>
 
-        <!-- CEEN619 -->
-        <div class="subject-card">
-            <div class="subject-header">
-                <span class="subject-code">CEEN619</span>
-                <h2>READING NON-FICTIONAL PROSE</h2>
-            </div>
-            <div class="subject-body">
-                <div class="topic-category">Prose Works</div>
-                <ul>
-                    <li><span class="author">V.S. Naipaul</span> <span class="work">India: A Wounded Civilization</span> 
-                        <span class="desc">Post-colonial state of India, The Emergency, Naipaul's self-loathing/heritage struggle, criticism of Indian society and civilization.</span>
-                    </li>
-                    <li><span class="author">A.P.J. Abdul Kalam</span> <span class="work">Wings of Fire</span> 
-                        <span class="desc">Autobiographical journey, early mentors, frugality, the "divine spark", and the "first rocket" experience.</span>
-                    </li>
-                    <li><span class="author">John Ruskin</span> <span class="work">"The Roots of Honour"</span> 
-                        <span class="desc">Establishing a beneficial social code of conduct independently of social emotions.</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    [span_32](start_span)<h3>Recommended Reading[span_32](end_span)</h3>
+    <ul>
+        <li>K. [span_33](start_span)R. S. Iyengar, Indian Writing in English, Bombay, 1962[span_33](end_span).</li>
+        <li>M. [span_34](start_span)K. Naik, A History of Indian English Literature, Sahitya Akadem, Delhi, 1982[span_34](end_span).</li>
+        <li>M. [span_35](start_span)K. Naik, Aspects of Indian Writing in English, Macmillan, Delhi, 1979[span_35](end_span).</li>
+        [span_36](start_span)<li>Paul C. Verghese, Essays on Indian Writing in English, N. V. Publishers, New Delhi, 1975[span_36](end_span).</li>
+        [span_37](start_span)<li>William Walsh, Indo-Anglian literature1800-1970: A Survey, Orient Longman, Madras, 1976[span_37](end_span).</li>
+        [span_38](start_span)<li>Bruce King, Modern Indian Poetry in English, OUP, New Delhi[span_38](end_span).</li>
+    </ul>
 
-        <!-- CEEN620 -->
-        <div class="subject-card">
-            <div class="subject-header">
-                <span class="subject-code">CEEN620</span>
-                <h2>INDIAN LITERARY THEORIES</h2>
-            </div>
-            <div class="subject-body">
-                <div class="topic-category">Key Thinkers & Theories</div>
-                <ul>
-                    <li><span class="author">Indian Aesthetics (General)</span> <span class="desc">Nature of Aesthetics and its relationship to philosophy and literature; Contemporary Indian Aesthetics.</span></li>
-                    <li><span class="author">Bharatamuni</span> <span class="work">Natya & Rasasiddhanta</span> <span class="desc">Performance/understanding of drama, and the concept/significance of Rasa.</span></li>
-                    <li><span class="author">Anandavardhana</span> <span class="work">Dhvani Theory</span> <span class="desc">Structure of poetic meaning and its implications for literary criticism; Types of Kavyas.</span></li>
-                    <li><span class="author">Kuntaka</span> <span class="work">Vakrokti-jivita</span> <span class="desc">The concept of metaphor and Vakrokti.</span></li>
-                    <li><span class="author">Abhinavagupta</span> <span class="work">Abhinavabharati</span> <span class="desc">The idea of Aesthetic Equipoise.</span></li>
-                    <li><span class="author">Rabindranath Tagore</span> <span class="work">"What is Art?"</span> <span class="desc">Key concepts exploring the primary themes of art.</span></li>
-                </ul>
-            </div>
-        </div>
+    [span_39](start_span)<h2>Course Title: Reading Non-Fictional Prose[span_39](end_span)</h2>
+    [span_40](start_span)<div class="course-meta">Core Elective Course / Course Code: CEEN619[span_40](end_span)</div>
 
-        <!-- CEEN621-A -->
-        <div class="subject-card">
-            <div class="subject-header">
-                <span class="subject-code">CEEN621-A</span>
-                <h2>HISTORY OF ENGLISH LANGUAGE</h2>
-            </div>
-            <div class="subject-body">
-                <div class="topic-category">Origins, Influences & Contributions</div>
-                <ul>
-                    <li>Position of English within the Indo-European family (focus on Germanic roots)</li>
-                    <li>Influence of the Greek language on Modern English vocabulary</li>
-                    <li><span class="author">Shakespeare's contribution</span> <span class="desc">Influence on vocabulary, idioms, and structure.</span></li>
-                    <li>The impact of Bible translations on the English language</li>
-                </ul>
+    [span_41](start_span)<h3>Unit I: Autobiography[span_41](end_span)</h3>
+    <ul>
+        [span_42](start_span)<li>Dr APJ Abdul Kalam: Wings of Fire[span_42](end_span).</li>
+    </ul>
 
-                <div class="topic-category">Linguistics, Morphology & Syntax</div>
-                <ul>
-                    <li>Processes of word formation: simple, complex, and compound words</li>
-                    <li>Difference between derivational and inflectional affixes</li>
-                    <li>Bound and free morphemes</li>
-                    <li>Backformation (definition and examples)</li>
-                </ul>
+    [span_43](start_span)<h3>Unit II: Travel Literature[span_43](end_span)</h3>
+    <ul>
+        <li>V. [span_44](start_span)S. Naipaul: India: A Wounded Civilization[span_44](end_span).</li>
+    </ul>
 
-                <div class="topic-category">Language Variation & Change</div>
-                <ul>
-                    <li>Concepts of Pidgin and Creole languages</li>
-                    <li>Dialects, Registers, and Slang</li>
-                    <li>Differences between Standard and Non-Standard English</li>
-                    <li>General characteristics of English and "language change" in linguistics</li>
-                </ul>
-            </div>
-        </div>
+    [span_45](start_span)<h3>Unit III: Essay[span_45](end_span)</h3>
+    <ul>
+        [span_46](start_span)<li>The Chapter titled The Roots of Honour from John Ruskin's Unto This Last[span_46](end_span).</li>
+    </ul>
 
-        <!-- CEEN6S-22-A -->
-        <div class="subject-card">
-            <div class="subject-header">
-                <span class="subject-code">CEEN6S-22-A</span>
-                <h2>AMERICAN LITERATURE</h2>
-            </div>
-            <div class="subject-body">
-                <div class="topic-category">Literary Movements & Concepts</div>
-                <ul>
-                    <li>Impact of Modernism and Postmodernism <span class="desc">How these movements break from traditional forms and reflect the changing worldviews of the time.</span></li>
-                    <li>Naturalism <span class="desc">Definition and context within American literature.</span></li>
-                    <li>Realism <span class="desc">Key characteristics in American literary history.</span></li>
-                </ul>
+    [span_47](start_span)<h2>Course Title: Indian Literary Theories[span_47](end_span)</h2>
+    [span_48](start_span)<div class="course-meta">Core Elective Course / Course Code: CEEN620[span_48](end_span)</div>
 
-                <div class="topic-category">Poetry</div>
-                <ul>
-                    <li><span class="author">Wallace Stevens</span> <span class="work">"Sunday Morning"</span> <span class="desc">Themes, poetic techniques, Modernist concerns, and the associated literary movement.</span></li>
-                    <li><span class="author">Robert Frost</span> <span class="work">"Mending Wall"</span> <span class="desc">Theme of isolation and boundaries; context as a 20th-century poem.</span></li>
-                    <li><span class="author">Sylvia Plath</span> <span class="work">"Lady Lazarus"</span> <span class="desc">Reading as a subversive poem; themes; references to the Gospel (e.g., John).</span></li>
-                    <li><span class="author">Langston Hughes</span> <span class="work">"The Negro Mother"</span> <span class="desc">The representation of African-American identity.</span></li>
-                </ul>
+    [span_49](start_span)<h3>Unit I[span_49](end_span)</h3>
+    <ul>
+        [span_50](start_span)<li>The nature of aesthetics, its relation to philosophy and literature: Indian traditions[span_50](end_span).</li>
+        [span_51](start_span)<li>Bharatamuni's concept of Natya[span_51](end_span).</li>
+        [span_52](start_span)<li>Bharatamuni's Rasasiddhanta[span_52](end_span).</li>
+    </ul>
 
-                <div class="topic-category">Novel & Drama</div>
-                <ul>
-                    <li><span class="author">Ernest Hemingway</span> <span class="work">The Old Man and the Sea</span> <span class="desc">Themes of victory, defeat, struggle, and existentialism. Symbolism of the marlin and the struggle with nature. (Context: Publication year and awareness of author's other works like *For Whom the Bell Tolls*).</span></li>
-                    <li><span class="author">Tennessee Williams</span> <span class="work">The Glass Menagerie</span> <span class="desc">Justification of the title, analysis of the central conflict, study of progressive characters, and reading the text as autobiographical.</span></li>
-                </ul>
-            </div>
-        </div>
+    [span_53](start_span)<h3>Unit II: The following topics are prescribed[span_53](end_span)</h3>
+    <ul>
+        [span_54](start_span)<li>Anandavardhana: Dhvani: Structure of Poetic Meaning[span_54](end_span).</li>
+        [span_55](start_span)<li>On the Language of Poetry and Metaphor (From Kuntaka's Vakrokti-jivita)[span_55](end_span).</li>
+        [span_56](start_span)<li>On Aesthetic Equipoise (From Abhinavagupta's Abhinavabharati)[span_56](end_span).</li>
+    </ul>
 
-        <footer>
-            Officially verified against BA Semester 6 (CBCS) Examination Papers & Syllabus Files.
-        </footer>
+    [span_57](start_span)<h3>Unit III[span_57](end_span)</h3>
+    <ul>
+        [span_58](start_span)<li>Contemporary Indian Aesthetics[span_58](end_span).</li>
+        [span_59](start_span)<li>Tagore: What is art ?[span_59](end_span).</li>
+    </ul>
+
+    [span_60](start_span)<h3>Recommended Reading[span_60](end_span)</h3>
+    <ul>
+        [span_61](start_span)<li>Indian Literary Criticism, Ed. by G. N. Devy, Orient Longman, 2007[span_61](end_span).</li>
+        [span_62](start_span)<li>Indian Aesthetics Ed. by V.S.Seturaman, Macmillan India Ltd., 1992[span_62](end_span).</li>
+        [span_63](start_span)<li>Indian Poetics by T.N.Srikantaiah, translated from Kannada by N. Balasubrahmanya, 2006, Sahitya Academy, New Delhi[span_63](end_span).</li>
+        [span_64](start_span)<li>Indian Poetics G. T. Deshpande, Popular Prakashan,2009[span_64](end_span).</li>
+    </ul>
+
+    [span_65](start_span)<h2>Course Title: History of English Language[span_65](end_span)</h2>
+    [span_66](start_span)<div class="course-meta">Core Elective Course / Course Code: CEEN621A[span_66](end_span)</div>
+
+    [span_67](start_span)<h3>Unit I[span_67](end_span)</h3>
+    <ul>
+        [span_68](start_span)<li>Prescribed Text: The English Language by C. L. Wren[span_68](end_span).</li>
+        [span_69](start_span)<li>Introduction: General Character of English: The Indo-European family of languages: English in the Germanic Family[span_69](end_span).</li>
+        [span_70](start_span)<li>Making of Modern English[span_70](end_span).</li>
+        [span_71](start_span)<li>Greek influence on English language[span_71](end_span).</li>
+        [span_72](start_span)<li>The Bible Translations and English Language[span_72](end_span).</li>
+        [span_73](start_span)<li>Shakespeare's contribution to English language[span_73](end_span).</li>
+    </ul>
+
+    [span_74](start_span)<h3>Unit III (A) Structure of English[span_74](end_span)</h3>
+    <ul>
+        [span_75](start_span)<li>Prescribed Text: The Study of Language by George Yule[span_75](end_span).</li>
+        [span_76](start_span)<li>Morphology: Derivational and inflectional affixes-bound and free morphemes[span_76](end_span).</li>
+        [span_77](start_span)<li>Word formation-simple, complex, compound words coinage-backformation, reduplication, blends, clipping, acronyms etc.[span_77](end_span).</li>
+    </ul>
+
+    [span_78](start_span)<h3>(B) Varieties of English[span_78](end_span)</h3>
+    <ul>
+        [span_79](start_span)<li>Standard and non-standard language, dialect, register, slang, pidgin, creole; varieties of English; language change[span_79](end_span).</li>
+    </ul>
+
+    [span_80](start_span)<h3>Recommended Reading[span_80](end_span)</h3>
+    <ul>
+        <li>Akmajian, A., R. A. Demers and R, M. Hamish, Linguistics: An Introduction to Language and Communication, 2nd ed. (Cambridge, Mass.: MIT Press, 1984; Indian edition, Prentice Hall, 1991) [span_81](start_span).</li>
+        <li>Fronikin. Victoria ed. 2000. Linguistics: An introduction to linguistic theory. Malden[span_81](end_span).</li>
+        <li>R. Rodman, An Introduction to Language, 2nd ed. (New York: Holt, 1974) [span_82](start_span).</li>
+    </ul>
+
+    <h2>Course Title: Mass Communication[span_82](end_span)</h2>
+    [span_83](start_span)<div class="course-meta">Core Elective Course / Course Code: CEEN621B[span_83](end_span)</div>
+
+    [span_84](start_span)<h3>Unit I: Advertising[span_84](end_span)</h3>
+    <ul>
+        [span_85](start_span)<li>Advertising: Evolution and growth of advertising-definitions of advertising- relevance of advertising- classification of advertising- various media for advertising socio-economic effects of advertising[span_85](end_span).</li>
+    </ul>
+
+    [span_86](start_span)<h3>Unit II: Verbal Aspect of an Advertisement[span_86](end_span)</h3>
+    <ul>
+        [span_87](start_span)<li>Use of effective, precise and catchy language -innovativeness[span_87](end_span).</li>
+        [span_88](start_span)<li>Difference between Advertisement in Print Form and in Electronic Media from Language point of view[span_88](end_span).</li>
+    </ul>
+
+    [span_89](start_span)<h3>Unit III: Writing for Mass Media[span_89](end_span)</h3>
+    <ul>
+        [span_90](start_span)<li>Principles and methods of effective writing- rules of grammar, sentence Construction, paragraphing, narration[span_90](end_span).</li>
+        [span_91](start_span)<li>Creativity in writing-features, articles, interview stories, book review[span_91](end_span).</li>
+        [span_92](start_span)<li>Writing for target groups, special interest audiences[span_92](end_span).</li>
+        [span_93](start_span)<li>Media reviews of arts, performing arts and cinema[span_93](end_span).</li>
+    </ul>
+
+    [span_94](start_span)<h3>Recommended Reading[span_94](end_span)</h3>
+    <ul>
+        [span_95](start_span)<li>Mass Communications and Media Studies: An Introduction by Peyton Paxson, The Continuum International Publishing Group Inc.[span_95](end_span).</li>
+        [span_96](start_span)<li>Writing for the Mass Media by James Glen Stovall, Pearson/Allyn & Bacon, 2006[span_96](end_span).</li>
+        <li>Basics of Writing for the Mass Media by Marlan D. Nelson, George Rhoades, Kendall/Hunt Pub. [span_97](start_span)Co., 1985[span_97](end_span).</li>
+    </ul>
+
+    [span_98](start_span)<h2>Course Title: American Literature[span_98](end_span)</h2>
+    [span_99](start_span)<div class="course-meta">Core Elective Course / Course Code: CEEN622A[span_99](end_span)</div>
+
+    [span_100](start_span)<h3>Unit I (A) Topics for background study[span_100](end_span)</h3>
+    <ul>
+        [span_101](start_span)<li>Realism and Naturalism in American Literature[span_101](end_span).</li>
+        [span_102](start_span)<li>Modernism and Postmodernism in American Literature[span_102](end_span).</li>
+    </ul>
+
+    [span_103](start_span)<h3>Unit I (B) The following poems are prescribed[span_103](end_span)</h3>
+    <ul>
+        [span_104](start_span)<li>Wallace Stevens: Sunday Morning[span_104](end_span).</li>
+        [span_105](start_span)<li>Robert Frost: Mending Wall[span_105](end_span).</li>
+        [span_106](start_span)<li>Sylvia Plath: Lady Lazarus[span_106](end_span).</li>
+        [span_107](start_span)<li>Langston Hughes: The Negro Mother[span_107](end_span).</li>
+    </ul>
+
+    [span_108](start_span)<h3>Unit II[span_108](end_span)</h3>
+    <ul>
+        [span_109](start_span)<li>Tennessee Williams: The Glass Menagerie[span_109](end_span).</li>
+    </ul>
+
+    [span_110](start_span)<h3>Unit III[span_110](end_span)</h3>
+    <ul>
+        [span_111](start_span)<li>Ernest Hemingway: The Old Man and the Sea[span_111](end_span).</li>
+    </ul>
+
+    [span_112](start_span)<h3>Recommended Reading[span_112](end_span)</h3>
+    <ul>
+        <li>Perkins, George; [span_113](start_span)The American Tradition in Literature[span_113](end_span).</li>
+        <li>Gray, Richard; [span_114](start_span)A History of American Literature[span_114](end_span).</li>
+    </ul>
+
+    [span_115](start_span)<h2>Course Title: Gender in Literature[span_115](end_span)</h2>
+    [span_116](start_span)<div class="course-meta">Core Elective Course/Course Code: CEEN622B[span_116](end_span)</div>
+
+    [span_117](start_span)<h3>Unit I[span_117](end_span)</h3>
+    <ul>
+        [span_118](start_span)<li>Prescribed Text: Virginia Woolf: Orlando[span_118](end_span).</li>
+    </ul>
+
+    [span_119](start_span)<h3>Unit II[span_119](end_span)</h3>
+    <ul>
+        [span_120](start_span)<li>Prescribed Text: Attia Hosain: Sunlight on a Broken Column[span_120](end_span).</li>
+    </ul>
+
+    [span_121](start_span)<h3>Unit III (A) The following poems are prescribed[span_121](end_span)</h3>
+    <ul>
+        [span_122](start_span)<li>Amelia Opie: A Lament[span_122](end_span).</li>
+        [span_123](start_span)<li>Emily Bronte: The Prisoner[span_123](end_span).</li>
+        [span_124](start_span)<li>Margaret Atwood: Night Poem[span_124](end_span).</li>
+        [span_125](start_span)<li>Kamala Das: The Sunshine Cat[span_125](end_span).</li>
+    </ul>
+
+    [span_126](start_span)<h3>Unit III (B)[span_126](end_span)</h3>
+    <ul>
+        <li>Rabindranath Tagore: 'The Wife's Letter', tr. [span_127](start_span)Supriya Chaudhuri, in Rabindranath Tagore: Selected Short Stories[span_127](end_span).</li>
+    </ul>
+
+    <div class="exam-section">
+        <h2>Standard Semester End University Examination Pattern</h2>
+        <p><em>(Applicable to the courses listed above)</em></p>
+        
+        <ul>
+            <li><strong>Max. Marks: 70</strong> | [span_128](start_span)Time: 2 Hours 15 Minutes (For Regular Students)[span_128](end_span).</li>
+            <li><strong>Max. Marks: 100</strong> | [span_129](start_span)Time: 3 Hours (For External Students)[span_129](end_span).</li>
+            [span_130](start_span)<li>Section A is for both the Regular and External students[span_130](end_span). [span_131](start_span)The duration of examination for the Regular students will be 2.15 hrs[span_131](end_span).</li>
+            [span_132](start_span)<li>Section B is only for the External students[span_132](end_span). [span_133](start_span)The duration of examination for the External students will be 3 hrs[span_133](end_span).</li>
+        </ul>
+
+        [span_134](start_span)<h3>University Examination Format[span_134](end_span)</h3>
+        <table>
+            <thead>
+                <tr>
+                    [span_135](start_span)<th colspan="4">Section A[span_135](end_span)</th>
+                </tr>
+                <tr>
+                    <th>Question No.</th>
+                    <th>Unit</th>
+                    <th>Type of Questions</th>
+                    <th>Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>1 to 3</td>
+                    [span_136](start_span)<td>Essay type questions with choice[span_136](end_span)</td>
+                    [span_137](start_span)<td>20[span_137](end_span)</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>1 to 3</td>
+                    [span_138](start_span)<td>Essay type questions with choice[span_138](end_span)</td>
+                    [span_139](start_span)<td>20[span_139](end_span)</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>1 to 3</td>
+                    [span_140](start_span)<td>Short Notes (Two out of four)[span_140](end_span)</td>
+                    [span_141](start_span)<td>20[span_141](end_span)</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>1 to 3</td>
+                    [span_142](start_span)<td>Very short answer type questions[span_142](end_span)</td>
+                    [span_143](start_span)<td>10[span_143](end_span)</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        [span_144](start_span)Very short answer type questions can be: Multiple Choice Questions, True-False choice questions, One-line answer type questions (Ten questions to be asked)[span_144](end_span).
+                    </td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    [span_145](start_span)<th colspan="4">Section B[span_145](end_span)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>5</td>
+                    <td>1 to 3</td>
+                    [span_146](start_span)<td>Essay type questions with choice[span_146](end_span)</td>
+                    [span_147](start_span)<td>20[span_147](end_span)</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>1 to 3</td>
+                    [span_148](start_span)<td>Short Notes (One out of two)[span_148](end_span)</td>
+                    [span_149](start_span)<td>10[span_149](end_span)</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 </body>
