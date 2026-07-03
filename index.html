@@ -1,428 +1,390 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KSKVKU BA Sem 6 English Syllabus (2016)</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>BA Semester-6 English Syllabus</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        :root {
+            --primary: #1e3a8a;       /* Deep blue */
+            --secondary: #3b82f6;     /* Bright blue */
+            --accent: #dbeafe;        /* Light blue */
+            --bg: #f3f4f6;            /* Light gray background */
+            --card-bg: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --border: #e5e7eb;
+        }
+        
+        * { 
+            box-sizing: border-box; 
+        }
         
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
-        }
-
-        .accordion-content {
-            display: grid;
-            grid-template-rows: 0fr;
-            transition: grid-template-rows 0.3s ease-out, opacity 0.3s ease-out;
-            opacity: 0;
-        }
-
-        .accordion-content.open {
-            grid-template-rows: 1fr;
-            opacity: 1;
-        }
-
-        .accordion-inner {
-            overflow: hidden;
+            font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
         }
         
-        .rotate-icon {
-            transform: rotate(180deg);
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        h1 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.02em;
+        }
+        
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        /* Subject Card Styling */
+        .subject-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            margin-bottom: 35px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subject-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px 30px;
+            border-bottom: 4px solid var(--secondary);
+        }
+        
+        .subject-header h2 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .subject-code {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 0.05em;
+        }
+        
+        .subject-body {
+            padding: 30px;
+        }
+        
+        .topic-category {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 25px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+        }
+        
+        .topic-category:first-child {
+            margin-top: 0;
+        }
+        
+        ul {
+            margin: 0;
+            padding-left: 10px;
+            list-style-type: none;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        li::before {
+            content: "✦";
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: -2px;
+            font-size: 0.9em;
+            top: 2px;
+        }
+        
+        .author {
+            font-weight: 600;
+            color: var(--text-main);
+            background: var(--accent);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        
+        .work {
+            font-style: italic;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .desc {
+            display: block;
+            margin-top: 4px;
+            font-size: 0.95em;
+            color: var(--text-muted);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            body { padding: 15px 10px; }
+            h1 { font-size: 1.8rem; }
+            .subject-header { padding: 15px 20px; }
+            .subject-body { padding: 20px; }
+            .subject-card:hover { transform: none; } /* Disable hover lift on mobile */
         }
     </style>
 </head>
-<body class="text-gray-800 antialiased min-h-screen flex flex-col">
+<body>
 
-    <!-- Header -->
-    <header class="bg-indigo-900 text-white py-8 shadow-lg border-b-4 border-yellow-500">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between">
-            <div>
-                <h1 class="text-2xl sm:text-3xl font-bold tracking-tight">Krantiguru Shyamji Krishna Verma</h1>
-                <h2 class="text-xl sm:text-2xl font-medium text-indigo-200 mt-1">Kachchh University (KSKVKU)</h2>
-                <p class="mt-2 text-sm text-yellow-400 font-semibold tracking-wide uppercase">B.A. Semester 6 | English Syllabus (CBCS 2016)</p>
-            </div>
-            <div class="mt-6 sm:mt-0 bg-white p-3 rounded-full shadow-md">
-                <i class="fas fa-university text-4xl text-indigo-900"></i>
-            </div>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Bachelor of Arts (CBCS)</h1>
+            <div class="subtitle">Semester 6 — Complete English Syllabus</div>
+        </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
-
-        <!-- Global Paper Style Banner -->
-        <div class="bg-white rounded-xl shadow-md p-6 mb-8 border-l-4 border-indigo-600">
-            <div class="flex justify-between items-center cursor-pointer" onclick="togglePaperStyle()" id="paperStyleHeader">
-                <h3 class="text-lg font-bold text-gray-900 flex items-center">
-                    <i class="fas fa-file-alt text-indigo-600 mr-3"></i> General Paper Style (2016 Pattern)
-                </h3>
-                <i class="fas fa-chevron-down text-gray-400 transition-transform duration-300" id="paperStyleIcon"></i>
+        <!-- CCEN606 -->
+        <div class="subject-card">
+            <div class="subject-header">
+                <span class="subject-code">CCEN606</span>
+                <h2>GENERAL ENGLISH</h2>
             </div>
-            <div class="accordion-content mt-4" id="paperStyleContent">
-                <div class="accordion-inner text-sm text-gray-600">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-indigo-50 p-4 rounded-lg">
-                            <h4 class="font-bold text-indigo-900 mb-2 border-b border-indigo-200 pb-2">Regular Students (70 Marks)</h4>
-                            <ul class="list-disc pl-5 space-y-1">
-                                <li>Time: 2 Hours 15 Minutes</li>
-                                <li>Attempt only <strong>Section A</strong></li>
-                                <li>Typically involves short notes, objective questions, and grammar/comprehension.</li>
-                            </ul>
-                        </div>
-                        <div class="bg-yellow-50 p-4 rounded-lg">
-                            <h4 class="font-bold text-yellow-900 mb-2 border-b border-yellow-200 pb-2">External Students (100 Marks)</h4>
-                            <ul class="list-disc pl-5 space-y-1">
-                                <li>Time: 3 Hours</li>
-                                <li>Attempt <strong>Section A</strong> (70 Marks) + <strong>Section B</strong> (30 Marks)</li>
-                                <li>Section B contains two long essay-type questions (15 marks each).</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="subject-body">
+                <div class="topic-category">Literature (Prose & Poetry)</div>
+                <ul>
+                    <li><span class="work">"The Tent"</span> <span class="desc">A study of the story highlighting displacement, symbolism, and the impact of natural calamities.</span></li>
+                    <li><span class="work">"The Death On The Map"</span> <span class="desc">Analysis of central themes, motifs involving a bird, star, and borders.</span></li>
+                    <li><span class="author">Nissim Ezekiel</span> <span class="work">"Goodbye Party for Miss Pushpa T. S."</span> <span class="desc">Character study, poet's use of "incorrect English," and humor.</span></li>
+                    <li><span class="author">Biographical Study</span> <span class="work">Balaji Namkeens</span> <span class="desc">The entrepreneurial journey of Chandubhai Virani and brothers.</span></li>
+                    <li><span class="work">UNIFEST</span> <span class="desc">Concept and significance of the University Youth Festival.</span></li>
+                    <li><span class="work">Drama</span> <span class="desc">Drama as a universal art form and effective tool to develop communication skills.</span></li>
+                </ul>
+
+                <div class="topic-category">Fundamentals of Communication</div>
+                <ul>
+                    <li>Introduction to Communication <span class="desc">Defining communication, forms (oral, face-to-face, etc.), and qualities of a good communicator.</span></li>
+                    <li>The Communication Process <span class="desc">Step-by-step process and the vital role of feedback.</span></li>
+                    <li>Non-Verbal & Barriers <span class="desc">Body language (Kinesics) and identifying barriers to effective communication.</span></li>
+                </ul>
+
+                <div class="topic-category">Soft Skills & Career Preparation</div>
+                <ul>
+                    <li>Overview of Soft Skills <span class="desc">Relating to spoken/written communication and positive attitude.</span></li>
+                    <li>Group Discussions & Interviews <span class="desc">Objectives, structure of GDs, and different types of interviews.</span></li>
+                    <li>Professional Development <span class="desc">Leadership qualities, Critical Thinking, and Stress Management techniques.</span></li>
+                </ul>
             </div>
         </div>
 
-        <!-- Controls -->
-        <div class="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
-            <h2 class="text-2xl font-bold text-gray-800">Subject Details</h2>
-            <div class="flex gap-3">
-                <button onclick="toggleAll(true)" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-lg shadow transition-colors flex items-center">
-                    <i class="fas fa-expand-alt mr-2"></i> Open All
-                </button>
-                <button onclick="toggleAll(false)" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm font-semibold rounded-lg shadow transition-colors flex items-center">
-                    <i class="fas fa-compress-alt mr-2"></i> Close All
-                </button>
+        <!-- CEEN617 -->
+        <div class="subject-card">
+            <div class="subject-header">
+                <span class="subject-code">CEEN617</span>
+                <h2>HISTORY OF ENGLISH LITERATURE (1890-1960)</h2>
+            </div>
+            <div class="subject-body">
+                <div class="topic-category">Literary Movements & Context</div>
+                <ul>
+                    <li>Impact of social, political, and economic changes on 20th-century English literature</li>
+                    <li>Characteristics of Movement Poetry</li>
+                    <li>Development of the Psychological Novel (and its narrative techniques)</li>
+                    <li>Revival of Poetic Drama in the 20th century</li>
+                    <li>The "Angry Young Man" movement</li>
+                </ul>
+
+                <div class="topic-category">Poetry</div>
+                <ul>
+                    <li><span class="author">T.S. Eliot</span> <span class="work">"To the Indian Who Died in Africa"</span> <span class="desc">Theme of exile and identity.</span></li>
+                    <li><span class="author">W.B. Yeats</span> <span class="work">"The Second Coming"</span> <span class="desc">Apocalyptic imagery, symbolism of the rough beast.</span></li>
+                    <li><span class="author">Philip Larkin</span> <span class="work">"Church Going"</span> <span class="desc">Significance of the church as a symbol.</span></li>
+                    <li><span class="author">W.H. Auden</span> <span class="work">"The Unknown Citizen"</span> <span class="desc">Critique of modern bureaucracy, central irony.</span></li>
+                </ul>
+
+                <div class="topic-category">Drama</div>
+                <ul>
+                    <li><span class="author">John Osborne</span> <span class="work">Look Back in Anger</span> <span class="desc">Themes of anger/disillusionment, social issues, characters of Jimmy & Alison Porter, the "bear and squirrel game" symbolism.</span></li>
+                </ul>
             </div>
         </div>
 
-        <!-- Subjects Container -->
-        <div id="subjects-container" class="space-y-4">
-            <!-- Rendered via JS -->
+        <!-- CEEN618 -->
+        <div class="subject-card">
+            <div class="subject-header">
+                <span class="subject-code">CEEN618</span>
+                <h2>INDIAN WRITING IN ENGLISH (POST-INDEPENDENCE PERIOD)</h2>
+            </div>
+            <div class="subject-body">
+                <div class="topic-category">Literary Movements</div>
+                <ul>
+                    <li>Evolution, major trends, and significant figures of Post-Independence Indian Poetry in English</li>
+                    <li>Evolution, main trends, and important dramatists of Post-Independence Indian English Drama</li>
+                </ul>
+
+                <div class="topic-category">Poetry</div>
+                <ul>
+                    <li><span class="author">Arun Kolatkar</span> <span class="work">"Yeshwant Rao"</span> <span class="desc">Tradition vs. modernity.</span></li>
+                    <li><span class="author">Jayanta Mahapatra</span> <span class="work">"Dawn at Puri"</span> <span class="desc">Setting and central themes.</span></li>
+                    <li><span class="author">Imtiaz Dharker</span> <span class="work">"Purdah - I"</span> <span class="desc">Critique of social practices.</span></li>
+                    <li><span class="author">Nissim Ezekiel</span> <span class="work">"Night of the Scorpion"</span> <span class="desc">Setting and themes.</span></li>
+                </ul>
+
+                <div class="topic-category">Novel & Drama</div>
+                <ul>
+                    <li><span class="author">Shashi Deshpande</span> <span class="work">That Long Silence</span> <span class="desc">Role of women, theme of silence and its consequences.</span></li>
+                    <li><span class="author">Mahesh Dattani</span> <span class="work">Final Solutions</span> <span class="desc">Communal conflict and its resolution.</span></li>
+                </ul>
+            </div>
         </div>
 
-    </main>
+        <!-- CEEN619 -->
+        <div class="subject-card">
+            <div class="subject-header">
+                <span class="subject-code">CEEN619</span>
+                <h2>READING NON-FICTIONAL PROSE</h2>
+            </div>
+            <div class="subject-body">
+                <div class="topic-category">Prose Works</div>
+                <ul>
+                    <li><span class="author">V.S. Naipaul</span> <span class="work">India: A Wounded Civilization</span> 
+                        <span class="desc">Post-colonial state of India, The Emergency, Naipaul's self-loathing/heritage struggle, criticism of Indian society and civilization.</span>
+                    </li>
+                    <li><span class="author">A.P.J. Abdul Kalam</span> <span class="work">Wings of Fire</span> 
+                        <span class="desc">Autobiographical journey, early mentors, frugality, the "divine spark", and the "first rocket" experience.</span>
+                    </li>
+                    <li><span class="author">John Ruskin</span> <span class="work">"The Roots of Honour"</span> 
+                        <span class="desc">Establishing a beneficial social code of conduct independently of social emotions.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-6 text-center text-sm">
-        <p>&copy; Synthesized KSKVKU 2016 Syllabus Web App. For educational reference.</p>
-    </footer>
+        <!-- CEEN620 -->
+        <div class="subject-card">
+            <div class="subject-header">
+                <span class="subject-code">CEEN620</span>
+                <h2>INDIAN LITERARY THEORIES</h2>
+            </div>
+            <div class="subject-body">
+                <div class="topic-category">Key Thinkers & Theories</div>
+                <ul>
+                    <li><span class="author">Indian Aesthetics (General)</span> <span class="desc">Nature of Aesthetics and its relationship to philosophy and literature; Contemporary Indian Aesthetics.</span></li>
+                    <li><span class="author">Bharatamuni</span> <span class="work">Natya & Rasasiddhanta</span> <span class="desc">Performance/understanding of drama, and the concept/significance of Rasa.</span></li>
+                    <li><span class="author">Anandavardhana</span> <span class="work">Dhvani Theory</span> <span class="desc">Structure of poetic meaning and its implications for literary criticism; Types of Kavyas.</span></li>
+                    <li><span class="author">Kuntaka</span> <span class="work">Vakrokti-jivita</span> <span class="desc">The concept of metaphor and Vakrokti.</span></li>
+                    <li><span class="author">Abhinavagupta</span> <span class="work">Abhinavabharati</span> <span class="desc">The idea of Aesthetic Equipoise.</span></li>
+                    <li><span class="author">Rabindranath Tagore</span> <span class="work">"What is Art?"</span> <span class="desc">Key concepts exploring the primary themes of art.</span></li>
+                </ul>
+            </div>
+        </div>
 
-    <script>
-        // Paper Style Toggle
-        let isPaperStyleOpen = false;
-        function togglePaperStyle() {
-            const content = document.getElementById('paperStyleContent');
-            const icon = document.getElementById('paperStyleIcon');
-            isPaperStyleOpen = !isPaperStyleOpen;
-            
-            if(isPaperStyleOpen) {
-                content.classList.add('open');
-                icon.classList.add('rotate-icon');
-            } else {
-                content.classList.remove('open');
-                icon.classList.remove('rotate-icon');
-            }
-        }
+        <!-- CEEN621-A -->
+        <div class="subject-card">
+            <div class="subject-header">
+                <span class="subject-code">CEEN621-A</span>
+                <h2>HISTORY OF ENGLISH LANGUAGE</h2>
+            </div>
+            <div class="subject-body">
+                <div class="topic-category">Origins, Influences & Contributions</div>
+                <ul>
+                    <li>Position of English within the Indo-European family (focus on Germanic roots)</li>
+                    <li>Influence of the Greek language on Modern English vocabulary</li>
+                    <li>Shakespeare's contribution <span class="desc">Influence on vocabulary, idioms, and structure.</span></li>
+                    <li>The impact of Bible translations on the English language</li>
+                </ul>
 
-        // Subject Data Array
-        const subjects = [
-            {
-                code: "CCEN606",
-                name: "GENERAL ENGLISH-[TH-UA]",
-                type: "Core Compulsory",
-                syllabus: `
-                    <div class="space-y-4">
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: Prose / Short Stories</h4>
-                            <p class="mb-2">Study of selected classic short stories to build comprehension and vocabulary.</p>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li><em>The Gift of the Magi</em> by O. Henry</li>
-                                <li><em>The Shroud (Kafan)</em> by Premchand</li>
-                                <li><em>The Fly</em> by Katherine Mansfield</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: Poetry</h4>
-                            <p class="mb-2">Prescribed Anthology: <em>Poetry Down the Ages</em>.</p>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li><em>Sonnet 116</em> by William Shakespeare</li>
-                                <li><em>The World Is Too Much With Us</em> by William Wordsworth</li>
-                                <li><em>O Captain! My Captain!</em> by Walt Whitman</li>
-                                <li><em>Goodbye Party for Miss Pushpa T.S.</em> by Nissim Ezekiel</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: Grammar and Communication Skills</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li><strong>Remedial Grammar:</strong> Modal auxiliary verbs, Tenses, and Determiners.</li>
-                                <li><strong>Speaking Skills:</strong> Dialogue writing (greetings, introductions, making requests).</li>
-                                <li><strong>Writing Skills:</strong> Prose comprehension and Paragraph writing.</li>
-                            </ul>
-                        </div>
-                    </div>`
-            },
-            {
-                code: "CEEN617",
-                name: "HISTORY OF ENGLISH LITERATURE (1890 - 1960)-[TH- UA]",
-                type: "Core Elective",
-                syllabus: `
-                    <div class="space-y-4">
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: Contexts and Characteristics</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>Characteristics of the Modern Age.</li>
-                                <li>Impact of World War I and II on Literature.</li>
-                                <li>Movements: Imagism, Symbolism, and Surrealism.</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: Modern Poetry</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>T.S. Eliot (The Waste Land context)</li>
-                                <li>W.B. Yeats</li>
-                                <li>War Poets (Siegfried Sassoon, Wilfred Owen)</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: Modern Fiction and Drama</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>Stream of Consciousness novel (Virginia Woolf, James Joyce).</li>
-                                <li>Problem Plays (George Bernard Shaw, John Galsworthy).</li>
-                                <li>Absurd Drama (Samuel Beckett).</li>
-                            </ul>
-                        </div>
-                    </div>`
-            },
-            {
-                code: "CEEN618",
-                name: "INDIAN WRITING IN ENGLISH (POST-INDEPENDENCE PERIOD)-[TH- UA]",
-                type: "Core Elective",
-                syllabus: `
-                    <div class="space-y-4">
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: Socio-Cultural Background</h4>
-                            <p class="text-gray-600">Post-Independence Indian ethos, identity crisis, diaspora, and the evolution of Indian English.</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: Post-Independence Indian English Poetry</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>Nissim Ezekiel</li>
-                                <li>Kamala Das</li>
-                                <li>A.K. Ramanujan</li>
-                                <li>Jayanta Mahapatra</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: Indian English Fiction and Drama</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>Study of major novelists: Salman Rushdie, Amitav Ghosh, Arundhati Roy.</li>
-                                <li>Study of major dramatists: Girish Karnad, Mahesh Dattani, Vijay Tendulkar (Translations).</li>
-                            </ul>
-                        </div>
-                    </div>`
-            },
-            {
-                code: "CEEN619",
-                name: "READING NON-FICTIONAL PROSE-[TH - UA]",
-                type: "Core Elective",
-                syllabus: `
-                    <div class="space-y-4">
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: Forms of Non-Fictional Prose</h4>
-                            <p class="text-gray-600">Understanding Autobiography, Biography, Memoir, Travelogue, and Essay.</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: Selected Autobiographies/Biographies</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>Extracts from <em>The Story of My Experiments with Truth</em> by M.K. Gandhi.</li>
-                                <li>Extracts from <em>Wings of Fire</em> by A.P.J. Abdul Kalam.</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: Selected Essays</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>Selected modern and classical essays focusing on socio-political issues, philosophy, and literature.</li>
-                                <li>Francis Bacon, Charles Lamb, or George Orwell (Representative works).</li>
-                            </ul>
-                        </div>
-                    </div>`
-            },
-            {
-                code: "CEEN620",
-                name: "INDIAN LITERARY THEORIES-I [TH - UA]",
-                type: "Core Elective",
-                syllabus: `
-                    <div class="space-y-4">
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: Introduction to Indian Poetics</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>Overview of Sanskrit Poetics.</li>
-                                <li>Bharata Muni's <em>Natyashastra</em> (Basic concepts).</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: Rasa Theory</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>Concept of Rasa.</li>
-                                <li>Bhavas: Sthayibhava, Vyabhicharibhava, Sattvikabhava.</li>
-                                <li>Vibhava and Anubhava.</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: Other Major Theories</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>Dhvani Theory (Anandavardhana).</li>
-                                <li>Vakrokti (Kuntaka) & Alamkara (Bhamaha/Dandin) overview.</li>
-                            </ul>
-                        </div>
-                    </div>`
-            },
-            {
-                code: "CEEN621A",
-                name: "HISTORY OF ENGLISH LANGUAGE- [TH - UA]",
-                type: "Core Elective",
-                syllabus: `
-                    <div class="space-y-4">
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: The Origins</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>The Indo-European Family of Languages.</li>
-                                <li>Grimm's Law and Verner's Law.</li>
-                                <li>The descent of the English Language.</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: Historical Development</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>General characteristics of Old English (OE).</li>
-                                <li>General characteristics of Middle English (ME).</li>
-                                <li>The Great Vowel Shift and the making of Modern English.</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: Vocabulary and Influences</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>Word formation processes (Affixation, Compounding, etc.).</li>
-                                <li>Foreign Influences on English: Latin, Greek, French, and Scandinavian borrowings.</li>
-                            </ul>
-                        </div>
-                    </div>`
-            },
-            {
-                code: "CEEN622A",
-                name: "AMERICAN LITERATURE- [TH - UA]",
-                type: "Core Elective",
-                syllabus: `
-                    <div class="space-y-4">
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 1: Historical Context</h4>
-                            <p class="text-gray-600">Transcendentalism, The Roaring Twenties, The Great Depression, and the evolution of the "American Dream".</p>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 2: American Poetry</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>Walt Whitman (Selected poems from <em>Leaves of Grass</em>)</li>
-                                <li>Emily Dickinson</li>
-                                <li>Robert Frost (<em>The Road Not Taken, Stopping by Woods...</em>)</li>
-                            </ul>
-                        </div>
-                        <div class="bg-gray-50 p-4 rounded border border-gray-200">
-                            <h4 class="font-bold text-gray-800 mb-2">Unit 3: American Fiction & Drama</h4>
-                            <ul class="list-disc pl-6 text-gray-600">
-                                <li>Fiction: Ernest Hemingway (e.g., <em>The Old Man and the Sea</em>), Mark Twain, or F. Scott Fitzgerald.</li>
-                                <li>Drama: Arthur Miller (e.g., <em>Death of a Salesman</em>) or Tennessee Williams.</li>
-                            </ul>
-                        </div>
-                    </div>`
-            }
-        ];
+                <div class="topic-category">Linguistics, Morphology & Syntax</div>
+                <ul>
+                    <li>Processes of word formation: simple, complex, and compound words</li>
+                    <li>Difference between derivational and inflectional affixes</li>
+                    <li>Bound and free morphemes</li>
+                    <li>Backformation (definition and examples)</li>
+                </ul>
 
-        const container = document.getElementById('subjects-container');
-        let openStates = {};
+                <div class="topic-category">Language Variation & Change</div>
+                <ul>
+                    <li>Concepts of Pidgin and Creole languages</li>
+                    <li>Dialects, Registers, and Slang</li>
+                    <li>Differences between Standard and Non-Standard English</li>
+                    <li>General characteristics of English and "language change" in linguistics</li>
+                </ul>
+            </div>
+        </div>
 
-        // Render Subjects
-        function renderSubjects() {
-            container.innerHTML = '';
-            subjects.forEach((subject, index) => {
-                openStates[index] = false;
-                
-                const subjectEl = document.createElement('div');
-                subjectEl.className = 'bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden transition-shadow hover:shadow-md';
-                
-                subjectEl.innerHTML = `
-                    <div class="px-6 py-5 flex items-center justify-between cursor-pointer select-none bg-white hover:bg-gray-50 transition-colors" onclick="toggleSubject(${index})">
-                        <div class="flex-grow pr-4">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-0.5 rounded">${subject.code}</span>
-                                <span class="bg-yellow-100 text-yellow-800 text-xs font-bold px-2.5 py-0.5 rounded">${subject.type}</span>
-                            </div>
-                            <h3 class="text-lg font-bold text-gray-900 leading-tight">${subject.name}</h3>
-                        </div>
-                        <div class="flex-shrink-0 bg-indigo-50 text-indigo-600 w-10 h-10 rounded-full flex items-center justify-center transition-transform duration-300 icon-container-${index}">
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                    </div>
-                    <div class="accordion-content border-t border-gray-100 bg-gray-50" id="content-${index}">
-                        <div class="accordion-inner p-6 text-sm">
-                            ${subject.syllabus}
-                        </div>
-                    </div>
-                `;
-                container.appendChild(subjectEl);
-            });
-        }
+        <!-- CEEN622-A -->
+        <div class="subject-card">
+            <div class="subject-header">
+                <span class="subject-code">CEEN622-A (CEEN6S-22-A)</span>
+                <h2>AMERICAN LITERATURE</h2>
+            </div>
+            <div class="subject-body">
+                <div class="topic-category">Literary Movements</div>
+                <ul>
+                    <li>Impact of Modernism and Postmodernism on American literature (breaking from traditional forms)</li>
+                    <li>Naturalism and Realism in the context of American literature</li>
+                </ul>
 
-        // Toggle Single Subject
-        function toggleSubject(index) {
-            const content = document.getElementById(`content-${index}`);
-            const iconContainer = document.querySelector(`.icon-container-${index}`);
-            
-            openStates[index] = !openStates[index];
-            
-            if (openStates[index]) {
-                content.classList.add('open');
-                iconContainer.classList.add('rotate-icon', 'bg-indigo-600', 'text-white');
-                iconContainer.classList.remove('bg-indigo-50', 'text-indigo-600');
-            } else {
-                content.classList.remove('open');
-                iconContainer.classList.remove('rotate-icon', 'bg-indigo-600', 'text-white');
-                iconContainer.classList.add('bg-indigo-50', 'text-indigo-600');
-            }
-        }
+                <div class="topic-category">Poetry</div>
+                <ul>
+                    <li><span class="author">Wallace Stevens</span> <span class="work">"Sunday Morning"</span> <span class="desc">Themes, poetic techniques, Modernist concerns.</span></li>
+                    <li><span class="author">Robert Frost</span> <span class="work">"Mending Wall"</span> <span class="desc">Theme of isolation and boundaries.</span></li>
+                    <li><span class="author">Sylvia Plath</span> <span class="work">"Lady Lazarus"</span> <span class="desc">Subversive themes, Gospel reference.</span></li>
+                    <li><span class="author">Langston Hughes</span> <span class="work">"The Negro Mother"</span> <span class="desc">Representation of African-American identity.</span></li>
+                </ul>
 
-        // Toggle All Subjects
-        function toggleAll(open) {
-            subjects.forEach((_, index) => {
-                const content = document.getElementById(`content-${index}`);
-                const iconContainer = document.querySelector(`.icon-container-${index}`);
-                
-                openStates[index] = open;
-                
-                if (open) {
-                    content.classList.add('open');
-                    iconContainer.classList.add('rotate-icon', 'bg-indigo-600', 'text-white');
-                    iconContainer.classList.remove('bg-indigo-50', 'text-indigo-600');
-                } else {
-                    content.classList.remove('open');
-                    iconContainer.classList.remove('rotate-icon', 'bg-indigo-600', 'text-white');
-                    iconContainer.classList.add('bg-indigo-50', 'text-indigo-600');
-                }
-            });
-        }
+                <div class="topic-category">Novel & Drama</div>
+                <ul>
+                    <li><span class="author">Ernest Hemingway</span> <span class="work">The Old Man and the Sea</span> <span class="desc">Themes of victory, defeat, struggle, existentialism; symbolism of the marlin.</span></li>
+                    <li><span class="author">Tennessee Williams</span> <span class="work">The Glass Menagerie</span> <span class="desc">Title justification, central conflict, progressive characters, autobiographical elements.</span></li>
+                </ul>
+            </div>
+        </div>
 
-        // Initial Render
-        window.onload = () => {
-            renderSubjects();
-            // Automatically open paper style
-            togglePaperStyle();
-        };
+        <footer>
+            Prepared based on BA Semester 6 (CBCS) Examination Papers.
+        </footer>
+    </div>
 
-    </script>
 </body>
 </html>
-
